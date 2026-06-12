@@ -2,6 +2,8 @@ package com.example.actividad2.data.repository;
 
 import android.app.Application;
 
+import androidx.lifecycle.LiveData;
+
 import com.example.actividad2.data.dao.ServicioDao;
 import com.example.actividad2.data.database.AppDatabase;
 import com.example.actividad2.data.entity.Servicio;
@@ -21,15 +23,19 @@ public class ServicioRepository {
         AppDatabase.databaseWriteExecutor.execute(() -> servicioDao.insertar(servicio));
     }
 
+    public void actualizar(Servicio servicio) {
+        AppDatabase.databaseWriteExecutor.execute(() -> servicioDao.actualizar(servicio));
+    }
+
     public void eliminar(Servicio servicio) {
         AppDatabase.databaseWriteExecutor.execute(() -> servicioDao.eliminar(servicio));
     }
 
-    public Future<Servicio> obtenerPorId(int id) {
-        return AppDatabase.databaseWriteExecutor.submit(() -> servicioDao.obtenerPorId(id));
+    public LiveData<Servicio> obtenerPorId(int id) {
+        return servicioDao.obtenerPorId(id);
     }
 
-    public Future<List<Servicio>> obtenerPorCliente(int clienteId) {
-        return AppDatabase.databaseWriteExecutor.submit(() -> servicioDao.obtenerPorCliente(clienteId));
+    public LiveData<List<Servicio>> obtenerPorCliente(int clienteId) {
+        return servicioDao.obtenerPorCliente(clienteId);
     }
 }
