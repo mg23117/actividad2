@@ -28,11 +28,16 @@
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigation"
+        android:background="@color/card_dark"
+        app:itemIconTint="@android:color/white"
+        app:itemTextColor="@android:color/white"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:menu="@menu/bottom_nav_menu"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
