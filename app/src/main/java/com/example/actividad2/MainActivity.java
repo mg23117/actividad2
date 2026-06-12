@@ -8,10 +8,14 @@ import androidx.fragment.app.Fragment;
 import com.example.actividad2.ui.clientes.ClienteFragment;
 import com.example.actividad2.ui.home.HomeFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.appbar.MaterialToolbar;
 
 public class MainActivity extends AppCompatActivity {
 
+
+
     private BottomNavigationView bottomNavigation;
+    private MaterialToolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,9 +23,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         bottomNavigation = findViewById(R.id.bottomNavigation);
+        toolbar = findViewById(R.id.toolbar);
 
         // Mostrar Home al iniciar
         if (savedInstanceState == null) {
+            toolbar.setTitle("Dashboard");
             loadFragment(new HomeFragment());
         }
 
@@ -30,17 +36,20 @@ public class MainActivity extends AppCompatActivity {
             int id = item.getItemId();
 
             if (id == R.id.nav_home) {
+                toolbar.setTitle("Dashboard");
                 loadFragment(new HomeFragment());
                 return true;
             }
 
             if (id == R.id.nav_clientes) {
+                toolbar.setTitle("Clientes");
                 loadFragment(new ClienteFragment());
                 return true;
             }
 
             if (id == R.id.nav_servicios) {
-                // Temporal mientras Persona 3 termina Servicios
+                toolbar.setTitle("Servicios");
+                // Temporal mientras Persona 3 termina Servicio
                 loadFragment(new HomeFragment());
                 return true;
             }

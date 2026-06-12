@@ -2,5 +2,10 @@
     <string name="app_name">actividad2</string>
 
     <string name="dashboard">Dashboard</string>
-    <string name="bienvenida">Bienvenido al Sistema de Clientes y Servicios</string>
+    <string name="clientes">Clientes</string>
+    <string name="servicios">Servicios</string>
+    <string name="contador_cero">0</string>
+    <string name="resumen_general">Resumen General</string>
+    <string name="descripcion_home">Gestión de clientes y servicios registrados</string>
+    <string name="accesos_rapidos">Accesos Rápidos</string>
 </resources>
