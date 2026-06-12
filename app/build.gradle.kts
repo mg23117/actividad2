@@ -47,5 +47,5 @@ dependencies {
     val room_version = "2.8.4"
     implementation("androidx.room:room-runtime:$room_version")
     annotationProcessor("androidx.room:room-compiler:$room_version")
-    implementation("androidx.recyclerview:recyclerview:1.4.8")
+    implementation("androidx.recyclerview:recyclerview:1.4.0")
 }

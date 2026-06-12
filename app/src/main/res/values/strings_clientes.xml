@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Strings para Fragment principal de Clientes -->
+    <string name="hint_buscar_cliente">Buscar cliente...</string>
+    <string name="no_clientes">No hay clientes registrados. \nToca para agregar uno.</string>
+    <string name="btn_description">Agregar un nuevo cliente</string>
+
+    <!--Strings para Agregar nuevo cliente -->
+    <string name="titulo_nuevo_cliente">NUEVO CLIENTE</string>
+    <string name="hint_nombre_completo">Nombre completo *</string>
+    <string name="hint_telefono">Teléfono</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_direccion">Dirección</string>
+    <string name="hint_municipio">Municipio (ej. Sonsonate)</string>
+    <string name="hint_notas">Notas adicionales</string>
+    <string name="btn_cancelar">Cancelar</string>
+    <string name="btn_guardar">Guardar</string>
+
+    <!--Strings para Editar cliente-->
+    <string name="titulo_editar_cliente">ACTUALIZAR CLIENTE</string>
+    <string name="btn_editar">Editar</string>
+</resources>

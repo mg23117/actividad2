@@ -18,7 +18,7 @@ public class ServicioRepository {
     }
 
     public void insertar(Servicio servicio) {
-        AppDatabase.databaseWriteExecutor.execute(() -> servicioDao.insertar(servicio));)
+        AppDatabase.databaseWriteExecutor.execute(() -> servicioDao.insertar(servicio));
     }
 
     public void eliminar(Servicio servicio) {
@@ -32,5 +32,4 @@ public class ServicioRepository {
     public Future<List<Servicio>> obtenerPorCliente(int clienteId) {
         return AppDatabase.databaseWriteExecutor.submit(() -> servicioDao.obtenerPorCliente(clienteId));
     }
-}
 }

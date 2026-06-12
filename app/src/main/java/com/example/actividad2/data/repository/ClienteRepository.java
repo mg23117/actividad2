@@ -2,6 +2,8 @@ package com.example.actividad2.data.repository;
 
 import android.app.Application;
 
+import androidx.lifecycle.LiveData;
+
 import com.example.actividad2.data.dao.ClienteDao;
 import com.example.actividad2.data.database.AppDatabase;
 import com.example.actividad2.data.entity.Cliente;
@@ -25,12 +27,12 @@ public class ClienteRepository{
         AppDatabase.databaseWriteExecutor.execute(() -> clienteDao.actualizar(cliente));
     }
 
-    public Future<List<Cliente>> obtenerTodos() {
-        return AppDatabase.databaseWriteExecutor.submit(() -> clienteDao.obtenerTodos());
+    public LiveData<List<Cliente>> obtenerTodos() {
+        return clienteDao.obtenerTodos();
     }
 
-    public Future<List<Cliente>> buscar(String busqueda) {
-        return AppDatabase.databaseWriteExecutor.submit(() -> clienteDao.buscar(busqueda));
+    public LiveData<List<Cliente>> buscar(String busqueda) {
+        return clienteDao.buscar(busqueda);
     }
 
     public Future<Cliente> obtenerPorId(int id) {
@@ -40,9 +42,4 @@ public class ClienteRepository{
     public Future<Cliente> obtenerPorNombre(String nombre) {
         return AppDatabase.databaseWriteExecutor.submit(() -> clienteDao.obtenerPorNombre(nombre));
     }
-
-    public Future<Cliente> obtenerPorNombreYApellido(String nombre, String apellido) {
-        return AppDatabase.databaseWriteExecutor.submit(() -> clienteDao.obtenerPorNombreYApellido(nombre, apellido));
-    }
-
 }
