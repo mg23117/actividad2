@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 
 import com.example.actividad2.ui.clientes.ClienteFragment;
 import com.example.actividad2.ui.home.HomeFragment;
+import com.example.actividad2.ui.servicios.ServicioFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.appbar.MaterialToolbar;
 
@@ -49,8 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
             if (id == R.id.nav_servicios) {
                 toolbar.setTitle("Servicios");
-                // Temporal mientras Persona 3 termina Servicio
-                loadFragment(new HomeFragment());
+                loadFragment(new ServicioFragment());
                 return true;
             }
 

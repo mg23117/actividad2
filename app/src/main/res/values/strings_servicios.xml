@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Strings para fragment_servicio.xml -->
+    <string name="no_servicios">No hay servicios registrados</string>
+
+    <string name="agregar_servicio">Agregar servicio</string>
+
+    <!--Strings para dialog_servicio.xml (agregar nuevo servicio) -->
+    <string name="titulo_nuevo_servicio">Nuevo Servicio</string>
+
+    <string name="label_cliente">Cliente</string>
+    <string name="label_tipo_servicio">Tipo de servicio</string>
+    <string name="label_estado">Estado</string>
+
+    <string name="hint_descripcion_servicio">Descripción del servicio</string>
+    <string name="hint_costo_mano_obra">Costo mano de obra ($)</string>
+    <string name="hint_costo_materiales">Costo materiales ($)</string>
+
+    <!--Strings para dialog_detalle_servicio.xml (detaelles de un servicio) -->
+    <string name="titulo_detalles_servicio">Detalles del Servicio</string>
+
+</resources>

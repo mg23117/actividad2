@@ -28,14 +28,18 @@ public class ServicioRepository {
     }
 
     public void eliminar(Servicio servicio) {
-        AppDatabase.databaseWriteExecutor.execute(() -> servicioDao.eliminar(servicio));
+        AppDatabase.databaseWriteExecutor.execute(() -> servicioDao.eliminarLogico(servicio.getId()));
     }
 
-    public LiveData<Servicio> obtenerPorId(int id) {
+    public LiveData<Servicio> obtenerPorId (int id) {
         return servicioDao.obtenerPorId(id);
     }
 
-    public LiveData<List<Servicio>> obtenerPorCliente(int clienteId) {
+    public LiveData<List<Servicio>> obtenerPorCliente (int clienteId) {
         return servicioDao.obtenerPorCliente(clienteId);
+    }
+
+    public LiveData<List<Servicio>> obtenerTodos() {
+        return servicioDao.obtenerTodos();
     }
 }

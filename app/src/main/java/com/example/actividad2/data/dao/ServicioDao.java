@@ -20,12 +20,15 @@ public interface ServicioDao {
     @Query("SELECT * FROM servicios WHERE id = :id")
     LiveData<Servicio> obtenerPorId(int id);
 
-    @Delete
-    void eliminar(Servicio servicio);
-
     @Update
     void actualizar(Servicio servicio);
 
-    @Query("SELECT * FROM servicios WHERE cliente_id = :clienteId ORDER BY id DESC")
+    @Query("UPDATE servicios SET eliminado = 1 WHERE id = :id") // eliminación lógica
+    void eliminarLogico(int id);
+
+    @Query("SELECT * FROM servicios WHERE cliente_id = :clienteId AND eliminado = 0 ORDER BY id DESC")
     LiveData<List<Servicio>> obtenerPorCliente(int clienteId);
+
+    @Query("SELECT * FROM servicios WHERE eliminado = 0 ORDER BY id DESC")
+    LiveData<List<Servicio>> obtenerTodos();
 }
