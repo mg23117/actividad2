@@ -19,13 +19,14 @@ public class Cliente{
     private String direccion;
     private String municipio;
     private String notas;
+    private boolean activo;
 
     public Cliente(@NonNull String nombre, @NonNull String telefono, String direccion, @NonNull String email, String municipio, String notas) {
         this.nombre = nombre;
         this.direccion = direccion;
         this.municipio = municipio;
         this.notas = notas;
-
+        this.activo = true;
         setTelefono(telefono);
         setEmail(email);
     }
@@ -90,5 +91,9 @@ public class Cliente{
     public void setNotas(String notas) {
         this.notas = notas;
     }
+
+    public boolean isActivo() { return activo; }
+
+    public void setActivo(boolean activo) { this.activo = activo; }
 
 }

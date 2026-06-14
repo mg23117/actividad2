@@ -1,5 +1,6 @@
 package com.example.actividad2.ui.clientes;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -17,6 +18,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.actividad2.R;
+import com.example.actividad2.data.entity.Cliente;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class ClienteFragment extends Fragment {
@@ -32,7 +34,7 @@ public class ClienteFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_cliente, container, false);
 
         RecyclerView recyclerView = view.findViewById(R.id.recycler_view_clientes);
-        tvNoClientes = view.findViewById(R.id.tv_no_clientes); // Label de la pág 2 de la guía
+        tvNoClientes = view.findViewById(R.id.tv_no_clientes);
         etBuscar = view.findViewById(R.id.et_buscar_cliente);
         FloatingActionButton fab = view.findViewById(R.id.fab_agregar_cliente);
 
@@ -65,14 +67,28 @@ public class ClienteFragment extends Fragment {
             dialog.show(getParentFragmentManager(), "DialogAgregarCliente");
         });
 
-        // Evento para Editar un Cliente de la lista
-        adapter.setOnItemClickListener(cliente -> {
-            DialogEditarCliente dialog = new DialogEditarCliente();
-            dialog.setCliente(cliente);
-            dialog.setOnClienteActualizadoListener(clienteActualizado -> {
-                clienteViewModel.update(clienteActualizado);
-            });
-            dialog.show(getParentFragmentManager(), "DialogEditarCliente");
+        adapter.setOnItemClickListener(new ClienteAdapter.OnItemClickListener(){
+
+            @Override
+            public void onEditClick(Cliente cliente) {
+                DialogEditarCliente dialog = new DialogEditarCliente();
+                dialog.setCliente(cliente);
+                dialog.setOnClienteActualizadoListener(clienteActualizado -> {
+                    clienteViewModel.update(clienteActualizado);
+                });
+                dialog.show(getParentFragmentManager(), "DialogEditarCliente");
+            }
+            @Override
+            public void onDeleteClick(Cliente cliente) {
+                new AlertDialog.Builder(requireContext())
+                        .setTitle("Eliminar cliente")
+                        .setMessage("¿Desea eliminar a " + cliente.getNombre() + "?")
+                        .setPositiveButton("Eliminar",(dialog, which) -> {
+                            clienteViewModel.desactivarCliente(cliente.getId());
+                        })
+                        .setNegativeButton("Cancelar", null)
+                        .show();
+            }
         });
 
         // BONUS: Barra de búsqueda funcional por nombre

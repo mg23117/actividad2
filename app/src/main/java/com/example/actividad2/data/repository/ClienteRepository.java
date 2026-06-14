@@ -42,4 +42,8 @@ public class ClienteRepository{
     public Future<Cliente> obtenerPorNombre(String nombre) {
         return AppDatabase.databaseWriteExecutor.submit(() -> clienteDao.obtenerPorNombre(nombre));
     }
+
+    public void desactivarCliente(int id) {
+        AppDatabase.databaseWriteExecutor.execute(() -> clienteDao.desactivarCliente(id));
+    }
 }
