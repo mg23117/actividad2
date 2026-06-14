@@ -19,4 +19,14 @@
     <!--Strings para Editar cliente-->
     <string name="titulo_editar_cliente">ACTUALIZAR CLIENTE</string>
     <string name="btn_editar">Editar</string>
+    <string name="btn_eliminar">Eliminar</string>
+
+    <!--Strings para detalle cliente-->
+    <string name="det_telefono">TELÉFONO</string>
+    <string name="det_email">EMAIL</string>
+    <string name="det_direccion">DIRECCIÓN</string>
+    <string name="det_municipio">MUNICIPIO</string>
+    <string name="det_notas">NOTAS</string>
+    <string name="btn_llamar">Llamar</string>
+    <string name="btn_whatsapp">WhatsApp</string>
 </resources>

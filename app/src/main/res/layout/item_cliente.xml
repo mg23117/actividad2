@@ -26,7 +26,7 @@
             android:textColor="?android:attr/textColorPrimary"
             android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@+id/btn_editar"
+            app:layout_constraintEnd_toStartOf="@+id/layout_botones"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Cristiano Ronaldo dos Santos Aveiro" />
@@ -38,7 +38,7 @@
             android:layout_marginTop="6dp"
             android:textColor="?android:attr/textColorSecondary"
             android:textSize="14sp"
-            app:layout_constraintEnd_toStartOf="@+id/btn_editar"
+            app:layout_constraintEnd_toStartOf="@+id/layout_botones"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/text_view_nombre"
             tools:text="7777-1000" />
@@ -50,7 +50,7 @@
             android:layout_marginTop="2dp"
             android:textColor="?android:attr/textColorSecondary"
             android:textSize="14sp"
-            app:layout_constraintEnd_toStartOf="@+id/btn_editar"
+            app:layout_constraintEnd_toStartOf="@+id/layout_botones"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/text_view_telefono"
             tools:text="cr7.rm@gmail.com" />
@@ -62,21 +62,41 @@
             android:layout_marginTop="2dp"
             android:textColor="?android:attr/textColorSecondary"
             android:textSize="14sp"
-            app:layout_constraintEnd_toStartOf="@+id/btn_editar"
+            app:layout_constraintEnd_toStartOf="@+id/layout_botones"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/text_view_email"
             tools:text="Santa Ana Centro" />
 
-        <Button
-            android:id="@+id/btn_editar"
-            style="@style/Widget.MaterialComponents.Button.TextButton"
+        <LinearLayout
+            android:id="@+id/layout_botones"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/btn_editar"
-            android:textColor="?attr/colorPrimary"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageButton
+                android:id="@+id/btn_editar"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/bg_btn_editar"
+                android:contentDescription="@string/btn_editar"
+                android:padding="10dp"
+                android:src="@drawable/ic_edit"
+                app:tint="@android:color/white" />
+
+            <ImageButton
+                android:id="@+id/btn_eliminar"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_btn_eliminar"
+                android:contentDescription="@string/btn_eliminar"
+                android:padding="10dp"
+                android:src="@drawable/ic_delete"
+                app:tint="@android:color/white" />
+
+        </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

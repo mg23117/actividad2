@@ -1,5 +1,11 @@
 <resources>
-    <string name="app_name">Actividad2</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="app_name">actividad2</string>
+
+    <string name="dashboard">Dashboard</string>
+    <string name="clientes">Clientes</string>
+    <string name="servicios">Servicios</string>
+    <string name="contador_cero">0</string>
+    <string name="resumen_general">Resumen General</string>
+    <string name="descripcion_home">Gestión de clientes y servicios registrados</string>
+    <string name="accesos_rapidos">Accesos Rápidos</string>
 </resources>

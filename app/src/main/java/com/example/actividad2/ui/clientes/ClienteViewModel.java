@@ -34,6 +34,10 @@ public class ClienteViewModel extends AndroidViewModel {
         repository.actualizar(cliente);
     }
 
+    public void desactivarCliente(int id) {
+        repository.desactivarCliente(id);
+    }
+
     public LiveData<List<Cliente>> buscarClientes(String nombre) {
         return repository.buscar(nombre);
     }

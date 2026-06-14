@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/windowBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp">
+
+            <ImageButton
+                android:id="@+id/btn_detalle_regresar"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="8dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Regresar a la lista de clientes"
+                android:src="@drawable/ic_back"
+                app:tint="?android:attr/textColorPrimary"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/tv_detalle_nombre"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="24dp"
+                tools:text="Cristiano Ronaldo dos Santos Aveiro"
+                app:layout_constraintStart_toEndOf="@id/btn_detalle_regresar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/btn_detalle_regresar"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/det_telefono"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="?android:attr/textColorSecondary" />
+
+        <TextView
+            android:id="@+id/tv_detalle_telefono"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="?android:attr/textColorPrimary"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="16dp"
+            tools:text="7777 8888" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/det_email"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="?android:attr/textColorSecondary" />
+
+        <TextView
+            android:id="@+id/tv_detalle_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="?android:attr/textColorPrimary"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="16dp"
+            tools:text="cr7.rm@gmail.com" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/det_direccion"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="?android:attr/textColorSecondary" />
+
+        <TextView
+            android:id="@+id/tv_detalle_direccion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="?android:attr/textColorPrimary"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="16dp"
+            tools:text="Santa Ana Centro" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/det_municipio"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="?android:attr/textColorSecondary" />
+
+        <TextView
+            android:id="@+id/tv_detalle_municipio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="?android:attr/textColorPrimary"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="16dp"
+            tools:text="Santa Ana Centro" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/det_notas"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="?android:attr/textColorSecondary" />
+
+        <TextView
+            android:id="@+id/tv_detalle_notas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="?android:attr/textColorPrimary"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="28dp"
+            tools:text="Cliente frecuente" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_detalle_llamar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="6dp"
+                android:text="@string/btn_llamar"
+                android:textAllCaps="false"
+                app:icon="@drawable/ic_phone_call"
+                app:backgroundTint="#2196F3"
+                app:cornerRadius="24dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_detalle_whatsapp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="6dp"
+                android:text="@string/btn_whatsapp"
+                android:textAllCaps="false"
+                app:icon="@drawable/ic_whatsapp"
+                app:backgroundTint="#4CAF50"
+                app:cornerRadius="24dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
