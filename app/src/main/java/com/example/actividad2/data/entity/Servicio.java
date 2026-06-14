@@ -1,9 +1,14 @@
 package com.example.actividad2.data.entity;
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
+import androidx.room.Index;
 import androidx.room.PrimaryKey;
+
+import com.example.actividad2.data.entity.enums.EstadoServicio;
+import com.example.actividad2.data.entity.enums.TipoServicio;
 
 @Entity(
         tableName = "servicios",
@@ -12,22 +17,42 @@ import androidx.room.PrimaryKey;
                 parentColumns = "id",
                 childColumns = "cliente_id",
                 onDelete = ForeignKey.CASCADE
-        )
+        ),
+        indices = {@Index(value = "cliente_id")}
 )
 public class Servicio{
-    public Servicio(int clienteId, String descripcion, double precio) {
-        this.clienteId = clienteId;
-        this.descripcion = descripcion;
-        this.precio = precio;
-    }
-
     @PrimaryKey(autoGenerate = true)
     private int id;
 
     @ColumnInfo(name = "cliente_id")
-    public int clienteId;
-    public String descripcion;
-    public double precio;
+    private int clienteId;
+    @NonNull
+    @ColumnInfo(name = "tipo_servicio")
+    private TipoServicio tipoServicio;
+
+    @NonNull
+    private EstadoServicio estado;
+
+    @NonNull
+    @ColumnInfo(name = "descripcion_servicio")
+    private String descripcionServicio;
+
+    @ColumnInfo(name = "costo_mano_obra")
+    private double costoManoObra;
+
+    @ColumnInfo(name = "costo_materiales")
+    private double costoMateriales;
+
+    public Servicio(int clienteId, @NonNull TipoServicio tipoServicio, @NonNull EstadoServicio estado, @NonNull String descripcionServicio, double costoManoObra, double costoMateriales) {
+        this.clienteId = clienteId;
+        this.tipoServicio = tipoServicio;
+        this.estado = estado;
+        this.descripcionServicio = descripcionServicio;
+        this.costoManoObra = costoManoObra;
+        this.costoMateriales = costoMateriales;
+    }
+
+    public Servicio(){}
 
     // ========== GETTERS Y SETTERS ==========
 
@@ -47,19 +72,46 @@ public class Servicio{
         this.clienteId = clienteId;
     }
 
-    public String getDescripcion() {
-        return descripcion;
+    @NonNull
+    public TipoServicio getTipoServicio() {
+        return tipoServicio;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public void setTipoServicio(@NonNull TipoServicio tipoServicio) {
+        this.tipoServicio = tipoServicio;
     }
 
-    public double getPrecio() {
-        return precio;
+    @NonNull
+    public EstadoServicio getEstado() {
+        return estado;
     }
 
-    public void setPrecio(double precio) {
-        this.precio = precio;
+    public void setEstado(@NonNull EstadoServicio estado) {
+        this.estado = estado;
+    }
+
+    @NonNull
+    public String getDescripcionServicio() {
+        return descripcionServicio;
+    }
+
+    public void setDescripcionServicio(@NonNull String descripcionServicio) {
+        this.descripcionServicio = descripcionServicio;
+    }
+
+    public double getCostoManoObra() {
+        return costoManoObra;
+    }
+
+    public void setCostoManoObra(double costoManoObra) {
+        this.costoManoObra = costoManoObra;
+    }
+
+    public double getCostoMateriales() {
+        return costoMateriales;
+    }
+
+    public void setCostoMateriales(double costoMateriales) {
+        this.costoMateriales = costoMateriales;
     }
 }
