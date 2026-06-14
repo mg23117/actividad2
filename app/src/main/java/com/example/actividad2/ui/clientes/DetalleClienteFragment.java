@@ -42,7 +42,7 @@ public class DetalleClienteFragment extends Fragment {
             tvEmail.setText(getArguments().getString("email", ""));
             tvDireccion.setText(getArguments().getString("direccion", ""));
             tvMunicipio.setText(getArguments().getString("municipio", ""));
-            tvNotas.setText(getArguments().getString("notas", ""));
+            tvNotas.setText(getArguments().getString("notes", ""));
         }
 
         return root;
