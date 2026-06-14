@@ -43,6 +43,9 @@ public class Servicio{
     @ColumnInfo(name = "costo_materiales")
     private double costoMateriales;
 
+    @ColumnInfo(name = "eliminado")
+    private boolean eliminado = false;
+
     public Servicio(int clienteId, @NonNull TipoServicio tipoServicio, @NonNull EstadoServicio estado, @NonNull String descripcionServicio, double costoManoObra, double costoMateriales) {
         this.clienteId = clienteId;
         this.tipoServicio = tipoServicio;
@@ -113,5 +116,13 @@ public class Servicio{
 
     public void setCostoMateriales(double costoMateriales) {
         this.costoMateriales = costoMateriales;
+    }
+
+    public boolean isEliminado() {
+        return eliminado;
+    }
+
+    public void setEliminado(boolean eliminado) {
+        this.eliminado = eliminado;
     }
 }

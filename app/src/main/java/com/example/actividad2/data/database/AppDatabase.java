@@ -18,7 +18,7 @@ import com.example.actividad2.data.entity.Servicio;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {Cliente.class, Servicio.class}, version = 1, exportSchema = false)
+@Database(entities = {Cliente.class, Servicio.class}, version = 3, exportSchema = false)
 @TypeConverters(EnumConverter.class)
 public abstract class AppDatabase extends RoomDatabase {
     public abstract ClienteDao clienteDao();
@@ -35,6 +35,7 @@ public abstract class AppDatabase extends RoomDatabase {
                 if (INSTANCE == null) {
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
                             AppDatabase.class, "app_database")
+                            .fallbackToDestructiveMigration(true) // si se modifica entidades Room reconstruye la BD automáticamente
                             .addCallback(sRoomDatabaseCallback)
                             .build();
                 }
